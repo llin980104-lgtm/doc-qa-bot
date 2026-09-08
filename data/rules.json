@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "patterns": [
+      {
+        "pattern": "how to.*install|installation guide",
+        "answer": "To install the Doc QA Bot, follow these steps:\n1. Clone the repository\n2. Create a virtual environment\n3. Install dependencies with `pip install -r backend/requirements.txt`\n4. Configure environment variables in .env\n5. Run `python backend/app.py`",
+        "confidence": 0.95,
+        "source": "Installation Guide"
+      },
+      {
+        "pattern": "how to.*use|usage|getting started",
+        "answer": "To use the Doc QA Bot:\n1. Start the backend service\n2. Send POST requests to /api/v1/qa with your question\n3. The system will route your query through Rule Engine → Small Model → LLM layers\n4. Get answers with confidence scores and sources",
+        "confidence": 0.9,
+        "source": "Quick Start Guide"
+      },
+      {
+        "pattern": "what is|definition of",
+        "answer": "The Doc QA Bot is a hybrid question-answering system that combines:\n- Rule-based matching for exact FAQs\n- Semantic search with embeddings\n- LLM enhancement for complex questions",
+        "confidence": 0.85,
+        "source": "Overview"
+      }
+    ]
+  }
+}
