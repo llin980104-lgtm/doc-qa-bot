@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  # Doc QA Bot API
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+      - CACHE_BACKEND=redis
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./data:/app/data
+      - ./backend:/app
+    depends_on:
+      - redis
+    networks:
+      - doc-qa-network
+    restart: unless-stopped
+
+  # Redis cache
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - doc-qa-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+
+  # Optional: Ollama for local LLM
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ollama-data:/root/.ollama
+  #   networks:
+  #     - doc-qa-network
+  #   restart: unless-stopped
+
+volumes:
+  redis-data:
+  # ollama-data:
+
+networks:
+  doc-qa-network:
+    driver: bridge
