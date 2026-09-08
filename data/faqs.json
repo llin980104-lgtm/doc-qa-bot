@@ -1,0 +1,52 @@
+{
+  "faq_1": {
+    "questions": [
+      "What is Doc QA Bot?",
+      "Tell me about Doc QA Bot",
+      "What does Doc QA Bot do?"
+    ],
+    "answer": "Doc QA Bot is a hybrid question-answering system designed for documentation. It uses three layers: (1) Rule-based matching for exact FAQ matches, (2) Semantic search with embeddings for relevant content, (3) LLM enhancement for complex reasoning. This ensures fast, accurate, and cost-effective answers.",
+    "keywords": ["Doc QA Bot", "documentation", "question answering", "hybrid system"],
+    "source": "FAQ"
+  },
+  "faq_2": {
+    "questions": [
+      "How do I start the bot?",
+      "How to run the bot?",
+      "Getting started with Doc QA Bot"
+    ],
+    "answer": "To start Doc QA Bot:\n1. Clone the repository\n2. Install dependencies: `pip install -r backend/requirements.txt`\n3. Configure .env file with API keys\n4. Run: `python backend/app.py`\n5. Access API at http://localhost:8000\n6. View documentation at http://localhost:8000/docs",
+    "keywords": ["start", "run", "getting started", "installation"],
+    "source": "Setup Guide"
+  },
+  "faq_3": {
+    "questions": [
+      "What are the API endpoints?",
+      "Show me the API endpoints",
+      "How to call the API?"
+    ],
+    "answer": "Main API endpoints:\n- POST /api/v1/qa - Ask a question\n- POST /api/v1/documents - Add document\n- POST /api/v1/feedback - Submit feedback\n- GET /api/v1/health - Health check\n- GET /api/v1/stats - System statistics",
+    "keywords": ["API", "endpoints", "endpoints", "REST"],
+    "source": "API Reference"
+  },
+  "faq_4": {
+    "questions": [
+      "How many layers does the system have?",
+      "What are the system layers?",
+      "Architecture of Doc QA Bot"
+    ],
+    "answer": "Doc QA Bot has 3 layers:\n1. Rule Engine - Fast exact matching (<10ms), 100% accuracy for FAQs\n2. Small Model - Semantic search with embeddings (<500ms), 85-90% accuracy\n3. LLM Enhancement - Deep reasoning (1-3s), 95%+ accuracy for complex questions",
+    "keywords": ["layers", "architecture", "system design"],
+    "source": "Architecture Guide"
+  },
+  "faq_5": {
+    "questions": [
+      "Can I use a local LLM?",
+      "How to use local models?",
+      "LLM configuration options"
+    ],
+    "answer": "Yes! You can configure different LLM providers:\n- OpenAI (default): Set OPENAI_API_KEY in .env\n- Local models: Set LLM_PROVIDER=local and configure base_url\n- Supported: Ollama, vLLM, and compatible endpoints",
+    "keywords": ["LLM", "local model", "configuration", "OpenAI"],
+    "source": "Configuration Guide"
+  }
+}
